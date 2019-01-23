@@ -10,13 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>microservicecloud-consumer-dept-80</artifactId>
-
     <description>部门微服务消费者</description>
 
     <dependencies>
         <dependency><!-- 自己定义的api -->
             <groupId>com.youngnzhi.springcloud</groupId>
-            <artifactId>springcloud-microservicecloud</artifactId>
+            <artifactId>springcloud-microservicecloud-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
