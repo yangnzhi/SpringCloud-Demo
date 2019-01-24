@@ -17,6 +17,8 @@
     <junit.version>4.12</junit.version>
     <log4j.version>1.2.17</log4j.version>
     <lombok.version>1.16.18</lombok.version>
+    <project.artifactId>springcloud-microservicecloud</project.artifactId>
+    <project.version>1.0-SNAPSHOT</project.version>
 </properties>
 
 <dependencyManagement>
@@ -68,6 +70,30 @@
         </dependency>
     </dependencies>
 </dependencyManagement>
+
+
+<!--微服务info内容详细信息配置(编译时) start-->
+<build>
+    <finalName>microservicecloud</finalName> <!--项目名称-->
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory> <!--build时访问resource下的配置文件-->
+            <filtering>true</filtering><!--开启过滤-->
+        </resource>
+    </resources>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <configuration>
+                <delimiters>
+                    <delimit>$</delimit> <!--获取配置文件中 $开头$结尾 的文件信息-->
+                </delimiters>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+<!--微服务info内容详细信息配置 end-->
 
 <modules>
     <module>microservicecloud-api</module>

@@ -3,7 +3,7 @@ server:
 
 
 #eureka服务端配置
-eurekaserverena:
+eureka:
   instance:
     hostname: localhost #eureka服务端的实例名称
   client:
@@ -13,4 +13,3 @@ eurekaserverena:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
   server:
     enable-self-preservation: false #测试环境自我保护模式关闭
-
