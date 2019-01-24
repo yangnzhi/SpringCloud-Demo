@@ -5,13 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
- * Created by youngnzhi on 2019/1/23.
- * EnableEurekaClient : EurekaServer客户端启动类,本服务启动后会自动注册进eureka服务中
+ * Created by youngnzhi on 2019/1/24.
  */
-@EnableEurekaClient
 @SpringBootApplication
-public class DeptProvider8001_App {
+@EnableEurekaClient
+public class DeptProvider8002_APP {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider8001_App.class,args);
+        SpringApplication.run(DeptProvider8002_APP.class,args);
     }
 }
