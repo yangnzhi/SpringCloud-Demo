@@ -1,4 +1,11 @@
 .idea
+/01springcloud-code/microservicecloud/microservicecloud-api/target
+/01springcloud-code/microservicecloud/microservicecloud-consumer-dept-80/target
+/01springcloud-code/microservicecloud/microservicecloud-eureka-7001/target
+/01springcloud-code/microservicecloud/microservicecloud-provider-dept-8001/target
+/01springcloud-code/microservicecloud/microservicecloud-provider-dept-8002/target
+*/src/main/webapp/WEB-INF/classes/*
+*/*.iml
 
 # Compiled class file
 *.class
