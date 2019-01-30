@@ -26,11 +26,15 @@ spring:
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:7001/eureka  # eureka服务端已经配置的服务注册中心地址
+      #A-1 单机版配置
+      #defaultZone: http://localhost:7001/eureka  # eureka服务端已经配置的服务注册中心地址
+      #A-2 eureka集群配置，client添加所有服务端注册地址
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
     instance-id: microservicecloud-dept8001   #实例名称 eureka服务注册中心列表status显示的服务名称(主机名称:服务名称修改)
     prefer-ip-address: true  # 访问路径可以显示IP地址
 
+#微服务info信息配置
 info:
   app.name: microservicecloud-dept8001
   company.name: youngnzhiPTD
