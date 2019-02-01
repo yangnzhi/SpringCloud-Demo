@@ -13,6 +13,20 @@
     <description>部门微服务消费者</description>
 
     <dependencies>
+        <!-- Ribbon相关 与sc结合 start -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId><!--eureka客户端-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!-- Ribbon相关 end -->
         <dependency><!-- 自己定义的api -->
             <groupId>com.youngnzhi.springcloud</groupId>
             <artifactId>springcloud-microservicecloud-api</artifactId>

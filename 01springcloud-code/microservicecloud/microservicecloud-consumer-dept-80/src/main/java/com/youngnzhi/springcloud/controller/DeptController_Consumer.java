@@ -15,8 +15,12 @@ import java.util.List;
  */
 @RestController
 public class DeptController_Consumer {
+    //消费者call服务提供方普通通信 resttemplate通过服务提供方requestmapping url找到服务
+    //private static final String REST_URL_PREFIX = "http://localhost:8001";
 
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //ribbon负载均衡，通过spring application name连接服务提供方 在eureka服务注册中心，spring application name会显示成大写，所以这里连接名称改成大写
+    //好处 Ribbon和Eureka整合后Consumer可以直接调用服务而不用再关心地址和端口号
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
     @Autowired
     private RestTemplate restTemplate;
