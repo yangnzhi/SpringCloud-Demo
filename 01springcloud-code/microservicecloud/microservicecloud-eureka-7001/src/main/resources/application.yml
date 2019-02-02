@@ -9,7 +9,7 @@ eureka:
     #hostname: localhost #eureka服务端的实例名称
 
     #A-2集群版eureka服务端配置 找到C:\Windows\System32\drivers\etc路径下的hosts文件，添加域名配置
-    hostname: eureka7001.com #eureka服务端的实例名称
+    hostname: eureka7001.com #eureka服务端的实例名称 每个实例名称不同，方便区分
   client:
     register-with-eureka: false #false表示不向注册中心注册自己(服务注册中心自己不用注册自己)
     fetch-registry: false #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务

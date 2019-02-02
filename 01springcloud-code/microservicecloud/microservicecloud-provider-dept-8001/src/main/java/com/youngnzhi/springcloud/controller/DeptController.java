@@ -1,7 +1,10 @@
 package com.youngnzhi.springcloud.controller;
 
+import com.google.common.collect.Maps;
 import com.youngnzhi.springcloud.entities.Dept;
 import com.youngnzhi.springcloud.service.DeptService;
+import jdk.nashorn.internal.parser.JSONParser;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -9,6 +12,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class DeptController {
@@ -32,10 +36,19 @@ public class DeptController {
         return service.get(id);
     }
 
-    @RequestMapping(value="/dept/list",method=RequestMethod.GET)
+    /*@RequestMapping(value="/dept/list",method=RequestMethod.GET)
     public List<Dept> list()
     {
         return service.list();
+    }*/
+
+    /**for test*/
+    @RequestMapping(value="/dept/list",method=RequestMethod.GET)
+    public Map list()
+    {
+        Map model = Maps.newHashMap();
+        model.put("db","8001");
+        return model;
     }
 
     //微服务发现
