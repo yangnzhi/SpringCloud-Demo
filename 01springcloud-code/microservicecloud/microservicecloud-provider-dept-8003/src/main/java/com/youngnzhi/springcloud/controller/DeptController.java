@@ -34,19 +34,10 @@ public class DeptController {
         return service.get(id);
     }
 
-   /* @RequestMapping(value="/dept/list",method= RequestMethod.GET)
+    @RequestMapping(value="/dept/list",method= RequestMethod.GET)
     public List<Dept> list()
     {
         return service.list();
-    }
-*/
-
-    @RequestMapping(value="/dept/list",method=RequestMethod.GET)
-    public Map list()
-    {
-        Map model = Maps.newHashMap();
-        model.put("db","8003");
-        return model;
     }
 
     //微服务发现

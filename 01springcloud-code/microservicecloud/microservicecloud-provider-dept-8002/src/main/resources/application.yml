@@ -1,13 +1,19 @@
 server:
   port: 8002
 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml         # mybatis配置文件所在路径
+  type-aliases-package: com.youngnzhi.springcloud.entities   # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                     # mapper映射文件
+
 spring:
   application:
     name: microservicecloud-dept                        #eureka服务注册中心列表显示的application name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/clouddb01?useUnicode=true&characterEncoding=utf8&useSSL=false              # 数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb02?useUnicode=true&characterEncoding=utf8&useSSL=false              # 数据库名称
     username: root
     password: root
     dbcp2:

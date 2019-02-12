@@ -13,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/clouddb01?useUnicode=true&characterEncoding=utf8&useSSL=false              # 数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb03?useUnicode=true&characterEncoding=utf8&useSSL=false              # 数据库名称
     username: root
     password: root
     dbcp2:
