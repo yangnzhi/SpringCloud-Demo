@@ -19,6 +19,7 @@ public class MySelfRule {
     @Bean
     public IRule myRule(){
         //return new RoundRobinRule();//默认轮询算法
-        return new RandomRule();//随机算法
+        //return new RandomRule();//随机算法
+        return new RoundRobin_5TimesRule();//自定义轮询算法，每个服务器要求被调用5次。也即以前是每台机器一次，现在是每台机器5次
     }
 }
