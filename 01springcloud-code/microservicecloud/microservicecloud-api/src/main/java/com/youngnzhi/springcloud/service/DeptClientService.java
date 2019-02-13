@@ -12,7 +12,8 @@ import java.util.List;
 /**
  * Created by youngnzhi on 2019/2/13.
  * feign负载均衡配置：接口+注解
- * @FeignClient feign负载均衡注解，value为微服务名称
+ * @FeignClient feign负载均衡注解，value为微服务名称，针对这个微服务细腻化feign负载均衡
+ * @RequestMapping value和服务端映射地址一致
  */
 @FeignClient("MICROSERVICECLOUD-DEPT")
 public interface DeptClientService {
@@ -26,6 +27,6 @@ public interface DeptClientService {
     @RequestMapping(value="/dept/list",method=RequestMethod.GET)
     public List<Dept> list();
 
-    @RequestMapping("/consumer/dept/discovery")
+    @RequestMapping("/dept/discovery")
     public Object discovery();
 }
