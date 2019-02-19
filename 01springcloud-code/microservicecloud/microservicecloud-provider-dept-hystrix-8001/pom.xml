@@ -35,7 +35,7 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <!-- 将微服务provider侧注册进eureka end -->
-        <!-- springboot 健康服务监控 start-->
+        <!-- springboot 健康服务监控 要使用hystrix-dashboard服务监控必须添加这个依赖 start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

@@ -1,0 +1,36 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservicecloud-zuul-gateway-9527
+
+#eureka客户端配置,zuul自身注册进eureka服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+
+# before
+# http://localhost:8001/dept/discovery
+
+# after
+# http://myzuul.com:9527/microservicecloud-dept/dept/discovery
+
+#zuul配置,不配置以下信息，访问路径为 before 和 after 都可以
+#配置以下信息后
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-dept   #访问路径中真实的微服务名称 mydept为自定义配置信息名称，和下面一样
+    mydept.path: /mydept/**                     #访问路径中用这个path代替真实的微服务名称 此时代理访问路径 http://myzuul.com:9527/mydept/dept/discovery
+  #ignored-services: microservicecloud-dept     #隐藏访问真实的微服务，禁止通过路径中加真实微服务名称microservicecloud-dept访问， 此时不能访问原暴露真实微服务名称的路径 原路径：http://myzuul.com:9527/microservicecloud-dept/dept/discovery
+  ignored-services: "*"                       #隐藏eureka服务注册中心中所有真实微服务名称，都用mydept.path路径代替访问
+  prefix: /youngnzhi                            #设置访问路径统一的访问前缀 http://myzuul.com:9527/youngnzhi/mydept/dept/discovery
+
+
+
+
+
