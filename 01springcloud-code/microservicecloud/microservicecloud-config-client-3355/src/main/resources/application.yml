@@ -1,0 +1,4 @@
+#application.yml 是用户级的资源配置项，优先级低于bootstrap.yml
+spring:
+  application:
+    name: microservicecloud-config-client

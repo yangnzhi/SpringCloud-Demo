@@ -1,0 +1,18 @@
+server:
+  port: 3344
+
+# springcloud config配置  两种方式：使用ssh协议地址或http协议地址
+# 测试发现使用http协议获取git数据信息更流畅，推荐使用http协议地址，记得设置 skipSslValidation: true
+spring:
+  application:
+    name: microservicecloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yangnzhi/microservicecloud-config.git #GitHub上面的git仓库地址，http协议的地址
+          skipSslValidation: true #使用http协议地址这里必须设置为true
+
+          #使用ssh协议地址
+          #uri: git@github.com:yangnzhi/microservicecloud-config.git #GitHub上面的git仓库地址，SSH协议的地址
+          #使用ssh协议地址不需要设置skipSslValidation设置为true
