@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>microservicecloud-config-3344</artifactId>
-    <description>springcloud 微服务分布式配置中心</description>
+    <description>springcloud 微服务分布式配置中心服务端，其他配置客户端都需要从这里获取配置信息</description>
 
     <dependencies>
         <!--Springcloud 分布式配置依赖，配置中心服务端 start-->

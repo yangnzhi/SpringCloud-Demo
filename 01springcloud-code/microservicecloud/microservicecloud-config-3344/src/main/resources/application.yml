@@ -5,7 +5,7 @@ server:
 # 测试发现使用http协议获取git数据信息更流畅，推荐使用http协议地址，记得设置 skipSslValidation: true
 spring:
   application:
-    name: microservicecloud-config
+    name: microservicecloud-config   #github上存储yml信息的项目的名称,microservicecloud-config项目里面保存了各种yml
   cloud:
     config:
       server:
